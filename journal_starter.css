@@ -22,7 +22,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 }
 
 /* ============================================
@@ -39,6 +39,9 @@ body {
     width: 960px;
     margin: 20px auto;
     background: white;
+    border: 11px solid #19d83fa7;  
+    padding: 10px 20px;             
+    position: relative;
 }
 
 /* ============================================
@@ -49,14 +52,26 @@ body {
 ============================================ */
 
 #header-box {
-    background-color: #4a90e2;
-    color: white;
+    background-color: #e4f8ff;
     padding: 20px;
-    text-align: center;
+    text-align: right;
+    border: 3px solid #d81919;          /* Width, style, color */
+    margin-bottom: 20px;
+    clear: both;
 }
 
 #header-box h1 {
     font-size: 2em;
+    text-align: center;
+    color:#0d3745;
+    margin-bottom: 5px;
+
+}
+
+#header-box .tagline {
+    font-size: 1em;
+    font-style: italic;
+    color: rgb(93, 93, 93);
 }
 
 /* ============================================
@@ -68,17 +83,38 @@ body {
 
 #sidebar {
     float: left;
-    width: 25%;
-    padding: 20px;
-    background-color: #f0f0f0;
+    width: 150px;
+    margin-right: 20px;
+
 }
+
+.sidebar-content {
+    background-color: #7a8f99;
+    padding: 20px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.sidebar-content h2 {
+    font-size: 1em;
+    margin-bottom: 9px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.friends-list {
+    list-style: none;
+}
+
+.friends-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 
 #content-area {
-    float: left;
-    width: 75%;
-    padding: 20px;
+    margin-left: 200px;
 }
-
 /* ============================================
    STEP 5: CLEARFIX FOR PARENT COLLAPSE
    ============================================
@@ -87,7 +123,6 @@ body {
 
 #main-container::after {
     content: "";
-    display: table;
     clear: both;
 }
 
@@ -98,16 +133,19 @@ body {
 ============================================ */
 
 .journal-entry {
-    background-color: #fff;
+    background-color: #e4f8ff;
     margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
+    padding: 30px 15px;
+    border: 5px solid #56aebe;
     border-radius: 5px;
 }
 
 .entry-image {
-    float: left;
-    margin-right: 15px;
+    float: right;
+    max-width: 200px;      
+    height: auto;
+    margin-bottom: 15px;
+    margin-left: 15px;
     border: 12px solid #fff;
     box-shadow: 0 0 0 2px #333;
     padding: 8px;
@@ -115,15 +153,30 @@ body {
 }
 
 .entry-title {
-    color: #333;
+    color: #155163;
     margin-bottom: 10px;
+    border-bottom: 2px solid #53a9c1;
+    padding-bottom: 5px;
 }
 
 .entry-date {
-    color: #888;
+    color: #155163;
     font-size: 0.9em;
 }
 
+.entry-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#footer {
+    clear: both;
+    padding-top: 20px;
+    border-top: 1px solid #a6a6a6;
+    text-align: center;
+    margin-top: 20px;
+}
 /* ============================================
    STEP 7: RESPONSIVE DESIGN
    ============================================
@@ -136,13 +189,16 @@ body {
         margin: 0;
     }
     
-    #sidebar,
+    #sidebar {
+        float: none;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
     #content-area {
         float: none;
         width: 100%;
+        margin-left: 0;
     }
     
-    #sidebar {
-        margin-bottom: 20px;
-    }
 }
